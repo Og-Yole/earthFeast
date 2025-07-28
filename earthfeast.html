@@ -1,0 +1,1886 @@
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Earth Feast - Authentic Global Cuisine</title>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;900&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            color: #333;
+            overflow-x: hidden;
+        }
+
+        h1, h2, h3, h4 {
+            font-family: 'Playfair Display', serif;
+            font-weight: 700;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Header Styles */
+        header {
+            background-color: #fff;
+            box-shadow: 0 2px 15px rgba(0,0,0,0.1);
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .header-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 0;
+        }
+
+        .logo {
+            font-family: 'Playfair Display', serif;
+            font-size: 28px;
+            font-weight: 900;
+            color: #2a9d8f;
+        }
+
+        .logo span {
+            color: #e63946;
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+        }
+
+        nav ul li {
+            margin-left: 30px;
+        }
+
+        nav ul li a {
+            text-decoration: none;
+            color: #333;
+            font-weight: 500;
+            font-size: 16px;
+            transition: color 0.3s;
+        }
+
+        nav ul li a:hover {
+            color: #2a9d8f;
+        }
+
+        .nav-buttons {
+            display: flex;
+            align-items: center;
+        }
+
+        .language-toggle {
+            background: none;
+            border: 2px solid #2a9d8f;
+            color: #2a9d8f;
+            padding: 8px 15px;
+            border-radius: 20px;
+            font-weight: 500;
+            cursor: pointer;
+            margin-right: 20px;
+            transition: all 0.3s;
+        }
+
+        .language-toggle:hover {
+            background-color: #2a9d8f;
+            color: white;
+        }
+
+        .nav-buttons button {
+            background: none;
+            border: none;
+            font-size: 18px;
+            margin-left: 20px;
+            cursor: pointer;
+            color: #333;
+            transition: color 0.3s;
+        }
+
+        .nav-buttons button:hover {
+            color: #2a9d8f;
+        }
+
+        .menu-toggle {
+            display: none;
+            font-size: 24px;
+            background: none;
+            border: none;
+            cursor: pointer;
+        }
+
+        /* Hero Section */
+        .hero {
+            height: 100vh;
+            background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('https://images.unsplash.com/photo-1504674900247-0877df9cc836?ixlib=rb-4.0.3') no-repeat center center/cover;
+            display: flex;
+            align-items: center;
+            text-align: center;
+            color: white;
+            margin-top: 70px;
+        }
+
+        .hero-content {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .hero h1 {
+            font-size: 4rem;
+            margin-bottom: 20px;
+            line-height: 1.2;
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            margin-bottom: 30px;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 15px 30px;
+            background-color: #2a9d8f;
+            color: white;
+            text-decoration: none;
+            border-radius: 30px;
+            font-weight: 600;
+            transition: all 0.3s;
+            border: 2px solid #2a9d8f;
+        }
+
+        .btn:hover {
+            background-color: transparent;
+            color: #2a9d8f;
+        }
+
+        .btn-outline {
+            background-color: transparent;
+            color: #2a9d8f;
+            margin-left: 15px;
+        }
+
+        .btn-outline:hover {
+            background-color: #2a9d8f;
+            color: white;
+        }
+
+        /* About Section */
+        .about {
+            padding: 100px 0;
+            background-color: #f8f9fa;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+
+        .section-title h2 {
+            font-size: 2.5rem;
+            color: #e63946;
+            position: relative;
+            display: inline-block;
+            padding-bottom: 15px;
+        }
+
+        .section-title h2:after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 3px;
+            background-color: #2a9d8f;
+        }
+
+        .about-content {
+            display: flex;
+            align-items: center;
+            gap: 50px;
+        }
+
+        .about-text {
+            flex: 1;
+        }
+
+        .about-text h3 {
+            font-size: 2rem;
+            margin-bottom: 20px;
+            color: #333;
+        }
+
+        .about-text p {
+            margin-bottom: 20px;
+            line-height: 1.8;
+            font-size: 1.1rem;
+        }
+
+        .about-image {
+            flex: 1;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        }
+
+        .about-image img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        /* Menu Section */
+        .menu {
+            padding: 100px 0;
+            background-color: #fff;
+        }
+
+        .menu-categories {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 50px;
+            flex-wrap: wrap;
+        }
+
+        .category-btn {
+            padding: 12px 25px;
+            background: none;
+            border: 2px solid #e63946;
+            color: #e63946;
+            border-radius: 30px;
+            margin: 0 10px 10px;
+            cursor: pointer;
+            font-weight: 500;
+            transition: all 0.3s;
+        }
+
+        .category-btn.active, .category-btn:hover {
+            background-color: #e63946;
+            color: white;
+        }
+
+        .menu-items {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        .menu-item {
+            background: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+            transition: transform 0.3s;
+        }
+
+        .menu-item:hover {
+            transform: translateY(-10px);
+        }
+
+        .menu-item-img {
+            height: 200px;
+            overflow: hidden;
+        }
+
+        .menu-item-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s;
+        }
+
+        .menu-item:hover .menu-item-img img {
+            transform: scale(1.1);
+        }
+
+        .menu-item-content {
+            padding: 20px;
+        }
+
+        .menu-item-header {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 10px;
+        }
+
+        .menu-item-header h3 {
+            font-size: 1.4rem;
+            color: #333;
+        }
+
+        .price {
+            color: #e63946;
+            font-weight: 700;
+            font-size: 1.2rem;
+        }
+
+        .menu-item-content p {
+            color: #666;
+            line-height: 1.6;
+            margin-bottom: 15px;
+        }
+
+        /* Testimonials */
+        .testimonials {
+            padding: 100px 0;
+            background-color: #e63946;
+            color: white;
+        }
+
+        .testimonials .section-title h2 {
+            color: white;
+        }
+
+        .testimonials .section-title h2:after {
+            background-color: #2a9d8f;
+        }
+
+        .testimonial-container {
+            max-width: 800px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .testimonial {
+            padding: 30px;
+            background: rgba(255,255,255,0.1);
+            border-radius: 10px;
+            margin: 20px;
+        }
+
+        .testimonial p {
+            font-size: 1.2rem;
+            font-style: italic;
+            margin-bottom: 20px;
+            line-height: 1.8;
+        }
+
+        .client {
+            display: flex;
+            align-items: flex-start;
+            justify-content: center;
+        }
+
+        .client img {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            margin-right: 15px;
+            object-fit: cover;
+        }
+
+        .client-info h4 {
+            font-size: 1.2rem;
+            margin-bottom: 5px;
+        }
+
+        .client-info p {
+            font-style: normal;
+            margin: 0;
+            opacity: 0.8;
+        }
+
+        /* Contact Section */
+        .contact {
+            padding: 100px 0;
+            background-color: #f8f9fa;
+        }
+
+        .contact-container {
+            display: flex;
+            gap: 50px;
+        }
+
+        .contact-info {
+            flex: 1;
+        }
+
+        .contact-info h3 {
+            font-size: 1.8rem;
+            margin-bottom: 20px;
+            color: #333;
+        }
+
+        .contact-detail {
+            display: flex;
+            align-items: flex-start;
+            margin-bottom: 25px;
+        }
+
+        .contact-icon {
+            font-size: 24px;
+            color: #e63946;
+            margin-right: 15px;
+            min-width: 30px;
+        }
+
+        .contact-text h4 {
+            font-size: 1.2rem;
+            margin-bottom: 5px;
+        }
+
+        .contact-text p, .contact-text a {
+            color: #666;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        .contact-text a:hover {
+            color: #e63946;
+        }
+
+        .contact-form {
+            flex: 1;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 500;
+        }
+
+        .form-group input,
+        .form-group textarea {
+            width: 100%;
+            padding: 15px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            font-family: 'Poppins', sans-serif;
+            font-size: 1rem;
+        }
+
+        .form-group textarea {
+            height: 150px;
+            resize: vertical;
+        }
+
+        /* Footer */
+        footer {
+            background-color: #333;
+            color: white;
+            padding: 60px 0 30px;
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+
+        .footer-column h3 {
+            font-size: 1.5rem;
+            margin-bottom: 20px;
+            position: relative;
+            padding-bottom: 10px;
+        }
+
+        .footer-column h3:after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 50px;
+            height: 2px;
+            background-color: #2a9d8f;
+        }
+
+        .footer-column p {
+            margin-bottom: 20px;
+            line-height: 1.8;
+            color: #ccc;
+        }
+
+        .social-links {
+            display: flex;
+            gap: 15px;
+        }
+
+        .social-links a {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            background-color: #444;
+            border-radius: 50%;
+            color: white;
+            text-decoration: none;
+            transition: all 0.3s;
+        }
+
+        .social-links a:hover {
+            background-color: #2a9d8f;
+            transform: translateY(-3px);
+        }
+
+        .footer-links {
+            list-style: none;
+        }
+
+        .footer-links li {
+            margin-bottom: 12px;
+        }
+
+        .footer-links a {
+            color: #ccc;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        .footer-links a:hover {
+            color: #2a9d8f;
+        }
+
+        .copyright {
+            text-align: center;
+            padding-top: 30px;
+            border-top: 1px solid #444;
+            color: #aaa;
+            font-size: 0.9rem;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 992px) {
+            .hero h1 {
+                font-size: 3rem;
+            }
+            
+            .about-content {
+                flex-direction: column;
+            }
+            
+            .contact-container {
+                flex-direction: column;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .menu-toggle {
+                display: block;
+            }
+            
+            nav ul {
+                position: fixed;
+                top: 70px;
+                left: -100%;
+                width: 100%;
+                height: calc(100vh - 70px);
+                background: white;
+                flex-direction: column;
+                align-items: center;
+                padding-top: 50px;
+                transition: 0.3s;
+            }
+            
+            nav ul.active {
+                left: 0;
+            }
+            
+            nav ul li {
+                margin: 15px 0;
+            }
+            
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+            
+            .hero p {
+                font-size: 1rem;
+            }
+            
+            .btn {
+                padding: 12px 25px;
+            }
+        }
+
+        @media (max-width: 576px) {
+            .hero h1 {
+                font-size: 2rem;
+            }
+            
+            .section-title h2 {
+                font-size: 2rem;
+            }
+            
+            .btn-container {
+                display: flex;
+                flex-direction: column;
+                gap: 15px;
+            }
+            
+            .btn-outline {
+                margin-left: 0;
+            }
+            
+            .nav-buttons {
+                flex-direction: column;
+                gap: 10px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container header-container">
+            <div class="logo">Earth <span>Feast</span></div>
+            <button class="menu-toggle">
+                <i class="fas fa-bars"></i>
+            </button>
+            <nav>
+                <ul>
+                    <li><a href="#home" data-en="Home" data-cn="首页">Home</a></li>
+                    <li><a href="#about" data-en="About" data-cn="关于">About</a></li>
+                    <li><a href="#menu" data-en="Menu" data-cn="菜单">Menu</a></li>
+                    <li><a href="#testimonials" data-en="Testimonials" data-cn="评价">Testimonials</a></li>
+                    <li><a href="#contact" data-en="Contact" data-cn="联系">Contact</a></li>
+                </ul>
+            </nav>
+            <div class="nav-buttons">
+                <button class="language-toggle" id="languageToggle">中文</button>
+                <button><i class="fas fa-search"></i></button>
+                <button><i class="fas fa-shopping-cart"></i></button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div class="hero-content">
+            <h1 data-en="A Culinary Journey Around the World" data-cn="环游世界的美食之旅">A Culinary Journey Around the World</h1>
+            <p data-en="Experience authentic flavors from Europe, Africa, and Asia in one extraordinary dining experience." data-cn="在一次非凡的用餐体验中，品尝来自欧洲、非洲和亚洲的正宗风味。">Experience authentic flavors from Europe, Africa, and Asia in one extraordinary dining experience.</p>
+            <div class="btn-container">
+                <a href="#menu" class="btn" data-en="Explore Menu" data-cn="探索菜单">Explore Menu</a>
+                <a href="#contact" class="btn btn-outline" data-en="Book a Table" data-cn="预订餐桌">Book a Table</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="about" id="about">
+        <div class="container">
+            <div class="section-title">
+                <h2 data-en="Our Story" data-cn="我们的故事">Our Story</h2>
+            </div>
+            <div class="about-content">
+                <div class="about-text">
+                    <h3 data-en="Celebrating Global Culinary Traditions" data-cn="庆祝全球烹饪传统">Celebrating Global Culinary Traditions</h3>
+                    <p data-en="Earth Feast was created to bring together the most authentic and delicious dishes from five distinct culinary traditions: European, Igbo, Yoruba, Hausa, and Chinese. Our chefs are passionate about preserving the integrity of each culture's cooking techniques and flavors while creating a unique dining experience." data-cn="Earth Feast的创建是为了汇集来自五种不同烹饪传统的最正宗和美味的菜肴：欧洲、伊博、约鲁巴、豪萨和中国。我们的厨师热衷于保持每种文化烹饪技术和风味的完整性，同时创造独特的用餐体验。">Earth Feast was created to bring together the most authentic and delicious dishes from five distinct culinary traditions: European, Igbo, Yoruba, Hausa, and Chinese. Our chefs are passionate about preserving the integrity of each culture's cooking techniques and flavors while creating a unique dining experience.</p>
+                    <p data-en="We source our ingredients carefully to ensure authenticity and quality, working directly with suppliers who understand the importance of traditional methods and authentic flavors." data-cn="我们精心采购食材，以确保真实性和质量，直接与了解传统方法和正宗风味重要性的供应商合作。">We source our ingredients carefully to ensure authenticity and quality, working directly with suppliers who understand the importance of traditional methods and authentic flavors.</p>
+                    <a href="#menu" class="btn" data-en="Discover Our Menu" data-cn="发现我们的菜单">Discover Our Menu</a>
+                </div>
+                <div class="about-image">
+                    <img src="https://images.unsplash.com/photo-1556911220-e15b29be8c8f?ixlib=rb-4.0.3" alt="Chef preparing authentic dishes">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Menu Section -->
+    <section class="menu" id="menu">
+        <div class="container">
+            <div class="section-title">
+                <h2 data-en="Our Menu" data-cn="我们的菜单">Our Menu</h2>
+            </div>
+            <div class="menu-categories">
+                <button class="category-btn active" data-en="All" data-cn="全部">All</button>
+                <button class="category-btn" data-en="European" data-cn="欧洲菜">European</button>
+                <button class="category-btn" data-en="Igbo" data-cn="伊博菜">Igbo</button>
+                <button class="category-btn" data-en="Yoruba" data-cn="约鲁巴菜">Yoruba</button>
+                <button class="category-btn" data-en="Hausa" data-cn="豪萨菜">Hausa</button>
+                <button class="category-btn" data-en="Chinese" data-cn="中国菜">Chinese</button>
+            </div>
+            <div class="menu-items">
+                <!-- European Dishes (20 items) -->
+                <div class="menu-item" data-category="european">
+                    <div class="menu-item-img">
+                        <img src="https://thedeliciouslife.com/wp-content/uploads/2024/06/mediterranean-mezze-platter-white-bg.jpg" alt="Mediterranean Mezze">
+                    </div>
+                    <div class="menu-item-content">
+                        <div class="menu-item-header">
+                            <h3 data-en="Mediterranean Mezze" data-cn="地中海拼盘">Mediterranean Mezze</h3>
+                            <div class="price">$18</div>
+                        </div>
+                        <p data-en="Assorted olives, hummus, baba ganoush, and warm pita bread" data-cn="混合橄榄、鹰嘴豆泥、巴巴加努什和温热皮塔饼">Assorted olives, hummus, baba ganoush, and warm pita bread</p>
+                    </div>
+                </div>
+                <div class="menu-item" data-category="european">
+                    <div class="menu-item-img">
+                        <img src="https://www.vincenzosplate.com/wp-content/uploads/2022/08/1500x1500-Photo-1_1968-How-to-MAKE-NEAPOLITAN-PIZZA-with-Dry-Yeast-at-Home-Better-than-a-Pizzeria-in-Naples-V1-500x500.jpg" alt="Neapolitan Pizza">
+                    </div>
+                    <div class="menu-item-content">
+                        <div class="menu-item-header">
+                            <h3 data-en="Neapolitan Pizza" data-cn="那不勒斯披萨">Neapolitan Pizza</h3>
+                            <div class="price">$24</div>
+                        </div>
+                        <p data-en="San Marzano tomatoes, fresh mozzarella, basil, and extra virgin olive oil" data-cn="圣马扎诺番茄、新鲜马苏里拉奶酪、罗勒和特级初榨橄榄油">San Marzano tomatoes, fresh mozzarella, basil, and extra virgin olive oil</p>
+                    </div>
+                </div>
+                <div class="menu-item" data-category="european">
+                    <div class="menu-item-img">
+                        <img src="https://www.oliviascuisine.com/wp-content/uploads/2022/02/coq-au-vin.jpg" alt="French Coq au Vin">
+                    </div>
+                    <div class="menu-item-content">
+                        <div class="menu-item-header">
+                            <h3 data-en="French Coq au Vin" data-cn="法式红酒鸡">French Coq au Vin</h3>
+                            <div class="price">$28</div>
+                        </div>
+                        <p data-en="Chicken braised with wine, mushrooms, and pearl onions" data-cn="用红酒、蘑菇和珍珠洋葱炖鸡">Chicken braised with wine, mushrooms, and pearl onions</p>
+                    </div>
+                </div>
+                <div class="menu-item" data-category="european">
+                    <div class="menu-item-img">
+                        <img src="https://www.allrecipes.com/thmb/g7VtmrrckM3RNaqP3MyTlc_wXWo=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/221361-traditional-sauerbraten-beauty-4x3-BP-2925-a1b153f8bdfd4e4b840d5c802d3e16a3.jpg" alt="German Sauerbraten">
+                    </div>
+                    <div class="menu-item-content">
+                        <div class="menu-item-header">
+                            <h3 data-en="German Sauerbraten" data-cn="德式酸菜烤牛肉">German Sauerbraten</h3>
+                            <div class="price">$30</div>
+                        </div>
+                        <p data-en="Marinated beef roast with red cabbage and potato dumplings" data-cn="腌制牛肉烤肉配红卷心菜和土豆饺子">Marinated beef roast with red cabbage and potato dumplings</p>
+                    </div>
+                </div>
+                <div class="menu-item" data-category="european">
+                    <div class="menu-item-img">
+                        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQDUsbbzbHptpH1hYha7EcaOB6ZCIpzc10yZA&s" alt="Italian Risotto">
+                    </div>
+                    <div class="menu-item-content">
+                        <div class="menu-item-header">
+                            <h3 data-en="Italian Risotto" data-cn="意大利烩饭">Italian Risotto</h3>
+                            <div class="price">$22</div>
+                        </div>
+                        <p data-en="Creamy Arborio rice with mushrooms and parmesan" data-cn="奶油阿尔博里奥米饭配蘑菇和帕尔马干酪">Creamy Arborio rice with mushrooms and parmesan</p>
+                    </div>
+                </div>
+                <div class="menu-item" data-category="european">
+                    <div class="menu-item-img">
+                        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTBRbYFjpmepL_NLzT9t8hXny1jujMdNTM1yg&s" alt="Spanish Paella">
+                    </div>
+                    <div class="menu-item-content">
+                        <div class="menu-item-header">
+                            <h3 data-en="Spanish Paella" data-cn="西班牙海鲜饭">Spanish Paella</h3>
+                            <div class="price">$35</div>
+                        </div>
+                        <p data-en="Saffron rice with seafood and chorizo" data-cn="藏红花米饭配海鲜和西班牙香肠">Saffron rice with seafood and chorizo</p>
+                    </div>
+                </div>
+                <div class="menu-item" data-category="european">
+                    <div class="menu-item-img">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/f/ff/Fish_and_chips_blackpool.jpg" alt="British Fish and Chips">
+                    </div>
+                    <div class="menu-item-content">
+                        <div class="menu-item-header">
+                            <h3 data-en="British Fish and Chips" data-cn="英式炸鱼薯条">British Fish and Chips</h3>
+                            <div class="price">$19</div>
+                        </div>
+                        <p data-en="Beer-battered cod with thick-cut chips and mushy peas" data-cn="啤酒面糊鳕鱼配厚切薯条和豌豆泥">Beer-battered cod with thick-cut chips and mushy peas</p>
+                    </div>
+                </div>
+                <div class="menu-item" data-category="european">
+                    <div class="menu-item-img">
+                        <img src="https://www.recipetineats.com/tachyon/2019/03/Greek-Moussaka_3-re-edited-SQ.jpg" alt="Greek Moussaka">
+                    </div>
+                    <div class="menu-item-content">
+                        <div class="menu-item-header">
+                            <h3 data-en="Greek Moussaka" data-cn="希腊千层面">Greek Moussaka</h3>
+                            <div class="price">$26</div>
+                        </div>
+                        <p data-en="Layered eggplant casserole with béchamel sauce" data-cn="分层茄子砂锅配白汁酱">Layered eggplant casserole with béchamel sauce</p>
+                    </div>
+                </div>
+                <div class="menu-item" data-category="european">
+                    <div class="menu-item-img">
+                        <img src="https://media.newyorker.com/photos/5f80d568ee0128b05d63a96a/4:3/w_2467,h_1850,c_limit/Buford-Ratatouille.jpg" alt="French Ratatouille">
+                    </div>
+                    <div class="menu-item-content">
+                        <div class="menu-item-header">
+                            <h3 data-en="French Ratatouille" data-cn="法式蔬菜炖菜">French Ratatouille</h3>
+                            <div class="price">$18</div>
+                        </div>
+                        <p data-en="Stewed vegetables with herbs and olive oil" data-cn="蔬菜炖菜配香草和橄榄油">Stewed vegetables with herbs and olive oil</p>
+                    </div>
+                </div>
+                <div class="menu-item" data-category="european">
+                    <div class="menu-item-img">
+                        <img src="https://lh5.googleusercontent.com/proxy/hzhwLfarKdzBFcjBT80ERfiDw0UY78tELSGm5DVUkbYkZSdsjgPQXAQ4ybaLy3_6e3FjnRjWr_hjIMkPxSKp2bLxHcxbfqkyQiS_wB_17kyEzZ6VEOtXdg73cGDxbz9SZyERYtHW5IYpA2QSi8QXaaFHsvdaEp8bWTZ1_WoSnlzfD3Um_csv_WUW9qfAktiR6y2jgixxqfgku7QyeTeDyvNbdb4vIf0aSxSPjCfwFqCtjfgWb5Y3tCxdH6FHObA" alt="Austrian Wiener Schnitzel">
+                    </div>
+                    <div class="menu-item-content">
+                        <div class="menu-item-header">
+                            <h3 data-en="Austrian Wiener Schnitzel" data-cn="奥地利维也纳炸肉排">Austrian Wiener Schnitzel</h3>
+                            <div class="price">$32</div>
+                        </div>
+                        <p data-en="Breaded veal cutlet with lemon and capers" data-cn="面包屑小牛肉排配柠檬和刺山柑">Breaded veal cutlet with lemon and capers</p>
+                    </div>
+                </div>
+                <div class="menu-item" data-category="european">
+                    <div class="menu-item-img">
+                        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQwkCcyWpbj2ySicwl7YCdTwpjkK_IsL_azPw&s" alt="Portuguese Bacalhau">
+                    </div>
+                    <div class="menu-item-content">
+                        <div class="menu-item-header">
+                            <h3 data-en="Portuguese Bacalhau" data-cn="葡萄牙鳕鱼">Portuguese Bacalhau</h3>
+                            <div class="price">$27</div>
+                        </div>
+                        <p data-en="Salted cod with potatoes, onions, and olives" data-cn="盐渍鳕鱼配土豆、洋葱和橄榄">Salted cod with potatoes, onions, and olives</p>
+                    </div>
+                </div>
+                <div class="menu-item" data-category="european">
+                    <div class="menu-item-img">
+                        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTimkzMTzn_CtaJPKHg268EDc-xjhpEUN2xnw&s" alt="Swiss Rösti">
+                    </div>
+                    <div class="menu-item-content">
+                        <div class="menu-item-header">
+                            <h3 data-en="Swiss Rösti" data-cn="瑞士土豆饼">Swiss Rösti</h3>
+                            <div class="price">$16</div>
+                        </div>
+                        <p data-en="Crispy grated potato pancakes with apple compote" data-cn="脆皮土豆煎饼配苹果酱">Crispy grated potato pancakes with apple compote</p>
+                    </div>
+                </div>
+                <div class="menu-item" data-category="european">
+                    <div class="menu-item-img">
+                        <img src="https://d2lswn7b0fl4u2.cloudfront.net/photos/pg-stroopwafels-1700597737.jpg" alt="Dutch Stroopwafel">
+                    </div>
+                    <div class="menu-item-content">
+                        <div class="menu-item-header">
+                            <h3 data-en="Dutch Stroopwafel" data-cn="荷兰糖浆华夫饼">Dutch Stroopwafel</h3>
+                            <div class="price">$12</div>
+                        </div>
+                        <p data-en="Thin waffle cookies with caramel syrup" data-cn="薄华夫饼配焦糖糖浆">Thin waffle cookies with caramel syrup</p>
+                    </div>
+                </div>
+                <div class="menu-item" data-category="european">
+                    <div class="menu-item-img">
+                        <img src="https://www.happyfoodstube.com/wp-content/uploads/2018/03/creamy-irish-colcannon-image.jpg" alt="Irish Colcannon">
+                    </div>
+                    <div class="menu-item-content">
+                        <div class="menu-item-header">
+                            <h3 data-en="Irish Colcannon" data-cn="爱尔兰土豆泥">Irish Colcannon</h3>
+                            <div class="price">$15</div>
+                        </div>
+                        <p data-en="Mashed potatoes with cabbage and butter" data-cn="土豆泥配卷心菜和黄油">Mashed potatoes with cabbage and butter</p>
+                    </div>
+                </div>
+                <div class="menu-item" data-category="european">
+                    <div class="menu-item-img">
+                        <img src="https://cdn.britannica.com/06/236206-050-F8020E07/Plate-of-whole-and-halved-pierogi-dumplings-stuffed-with-cabbage-and-meat.jpg" alt="Polish Pierogi">
+                    </div>
+                    <div class="menu-item-content">
+                        <div class="menu-item-header">
+                            <h3 data-en="Polish Pierogi" data-cn="波兰饺子">Polish Pierogi</h3>
+                            <div class="price">$17</div>
+                        </div>
+                        <p data-en="Dumplings filled with potatoes and cheese" data-cn="土豆奶酪饺子">Dumplings filled with potatoes and cheese</p>
+                    </div>
+                </div>
+                <div class="menu-item" data-category="european">
+                    <div class="menu-item-img">
+                        <img src="https://www.recipetineats.com/tachyon/2023/06/Hungarian-Goulash-_6.jpg" alt="Hungarian Goulash">
+                    </div>
+                    <div class="menu-item-content">
+                        <div class="menu-item-header">
+                            <h3 data-en="Hungarian Goulash" data-cn="匈牙利炖牛肉">Hungarian Goulash</h3>
+                            <div class="price">$25</div>
+                        </div>
+                        <p data-en="Beef stew with paprika and dumplings" data-cn="牛肉炖菜配辣椒粉和饺子">Beef stew with paprika and dumplings</p>
+                    </div>
+                </div>
+                <div class="menu-item" data-category="european">
+                    <div class="menu-item-img">
+                        <img src="https://media.istockphoto.com/id/1472165339/photo/close-up-of-a-traditional-danish-delicacy-sandwich-adorned-with-prawns-dill-chives-lemon.jpg?s=612x612&w=0&k=20&c=I8c1lGmtdFAgNurraNR14_icegCoMrwiTKpWMtLtIBY=" alt="Scandinavian Smørrebrød">
+                    </div>
+                    <div class="menu-item-content">
+                        <div class="menu-item-header">
+                            <h3 data-en="Scandinavian Smørrebrød" data-cn="北欧开放式三明治">Scandinavian Smørrebrød</h3>
+                            <div class="price">$20</div>
+                        </div>
+                        <p data-en="Open-faced sandwich with pickled herring and rye bread" data-cn="开放式三明治配腌鲱鱼和黑麦面包">Open-faced sandwich with pickled herring and rye bread</p>
+                    </div>
+                </div>
+                <div class="menu-item" data-category="european">
+                    <div class="menu-item-img">
+                        <img src="https://whiskedawaykitchen.com/wp-content/uploads/2024/07/czech-svickova-7-780x975.jpg" alt="Czech Svíčková">
+                    </div>
+                    <div class="menu-item-content">
+                        <div class="menu-item-header">
+                            <h3 data-en="Czech Svíčková" data-cn="捷克牛肉卷">Czech Svíčková</h3>
+                            <div class="price">$28</div>
+                        </div>
+                        <p data-en="Marinated beef with cream sauce and dumplings" data-cn="腌制牛肉配奶油酱和饺子">Marinated beef with cream sauce and dumplings</p>
+                    </div>
+                </div>
+                <div class="menu-item" data-category="european">
+                    <div class="menu-item-img">
+                        <img src="https://images.immediate.co.uk/production/volatile/sites/30/2020/08/recipe-image-legacy-id-496_11-4bae7db.jpg" alt="Belgian Carbonnade">
+                    </div>
+                    <div class="menu-item-content">
+                        <div class="menu-item-header">
+                            <h3 data-en="Belgian Carbonnade" data-cn="比利时炖牛肉">Belgian Carbonnade</h3>
+                            <div class="price">$29</div>
+                        </div>
+                        <p data-en="Beef stewed in beer with onions and mustard" data-cn="啤酒炖牛肉配洋葱和芥末">Beef stewed in beer with onions and mustard</p>
+                    </div>
+                </div>
+                <div class="menu-item" data-category="european">
+                    <div class="menu-item-img">
+                        <img src="https://cristinaskitchen.com/wp-content/uploads/2023/12/close-up-finished-cabbage-rolls-square.jpg" alt="Romanian Sarmale">
+                    </div>
+                    <div class="menu-item-content">
+                        <div class="menu-item-header">
+                            <h3 data-en="Romanian Sarmale" data-cn="罗马尼亚卷心菜卷">Romanian Sarmale</h3>
+                            <div class="price">$21</div>
+                        </div>
+                        <p data-en="Cabbage rolls stuffed with rice and meat" data-cn="卷心菜卷配米饭和肉">Cabbage rolls stuffed with rice and meat</p>
+                    </div>
+                </div>
+
+                <!-- Igbo Dishes (20 items) -->
+                <div class="menu-item" data-category="igbo">
+                    <div class="menu-item-img">
+                        <img src="https://asabaseafood.com/wp-content/uploads/2023/11/oha-soup.jpg" alt="Oha Soup">
+                    </div>
+                    <div class="menu-item-content">
+                        <div class="menu-item-header">
+                            <h3 data-en="Oha Soup" data-cn="奥哈汤">Oha Soup</h3>
+                            <div class="price">$5</div>
+                        </div>
+                        <p data-en="Traditional soup with oha leaves, uziza seeds, and goat meat" data-cn="传统汤品，含奥哈叶、乌齐扎籽和山羊肉">Traditional soup with oha leaves, uziza seeds, and goat meat</p>
+                    </div>
+                </div>
+                <div class="menu-item" data-category="igbo">
+                    <div class="menu-item-img">
+                        <img src="https://lagosbukagrillandbar.com/wp-content/uploads/2021/07/nkwobi.jpeg" alt="Nkwobi">
+                    </div>
+                    <div class="menu-item-content">
+                        <div class="menu-item-header">
+                            <h3 data-en="Nkwobi" data-cn="恩科沃比">Nkwobi</h3>
+                            <div class="price">$14</div>
+                        </div>
+                        <p data-en="Spicy cow foot stew with onions and palm oil" data-cn="辣味牛蹄炖菜配洋葱和棕榈油">Spicy cow foot stew with onions and palm oil</p>
+                    </div>
+                </div>
+                <div class="menu-item" data-category="igbo">
+                    <div class="menu-item-img">
+                        <img src="https://images.squarespace-cdn.com/content/v1/614f831e90f08045038b4dae/1747676564492-RX4Z94MQC3WKR51VV3KC/Abacha.-Photo-Dailyfresheat-e1534627240972-1062x598.png" alt="Abacha">
+                    </div>
+                    <div class="menu-item-content">
+                        <div class="menu-item-header">
+                            <h3 data-en="Abacha" data-cn="阿巴查">Abacha</h3>
+                            <div class="price">$12</div>
+                        </div>
+                        <p data-en="Cassava flakes salad with vegetables and palm oil dressing" data-cn="木薯片沙拉配蔬菜和棕榈油调料">Cassava flakes salad with vegetables and palm oil dressing</p>
+                    </div>
+                </div>
+                <div class="menu-item" data-category="igbo">
+                    <div class="menu-item-img">
+                        <img src="https://www.myactivekitchen.com/wp-content/uploads/2016/12/ofada-stew-recipe-image.jpg" alt="Ofada Rice">
+                    </div>
+                    <div class="menu-item-content">
+                        <div class="menu-item-header">
+                            <h3 data-en="Ofada Rice" data-cn="奥法达米饭">Ofada Rice</h3>
+                            <div class="price">$7</div>
+                        </div>
+                        <p data-en="Local rice with ayamase sauce and assorted meats" data-cn="本地米饭配阿亚马塞酱和各种肉类">Local rice with ayamase sauce and assorted meats</p>
+                    </div>
+                </div>
+                <div class="menu-item" data-category="igbo">
+                    <div class="menu-item-img">
+                        <img src="https://foodpluswords.com/wp-content/uploads/2022/07/banga-soup-and-starch-735x980.jpeg" alt="Banga Soup">
+                    </div>
+                    <div class="menu-item-content">
+                        <div class="menu-item-header">
+                            <h3 data-en="Banga Soup" data-cn="邦加汤">Banga Soup</h3>
+                            <div class="price">$18</div>
+                        </div>
+                        <p data-en="Palm nut soup with fish and assorted meats" data-cn="棕榈坚果汤配鱼和各种肉类">Palm nut soup with fish and assorted meats</p>
+                    </div>
+                </div>
+                <div class="menu-item" data-category="igbo">
+                    <div class="menu-item-img">
+                        <img src="https://rexclarkeadventures.com/wp-content/uploads/2024/08/maxresdefault-17.jpg" alt="Ukwa">
+                    </div>
+                    <div class="menu-item-content">
+                        <div class="menu-item-header">
+                            <h3 data-en="Ukwa" data-cn="乌夸">Ukwa</h3>
+                            <div class="price">$15</div>
+                        </div>
+                        <p data-en="Breadfruit porridge with coconut milk" data-cn="面包果粥配椰奶">Breadfruit porridge with coconut milk</p>
+                    </div>
+                </div>
+                <div class="menu-item" data-category="igbo">
+                    <div class="menu-item-img">
+                        <img src="https://deychop.com/wp-content/uploads/2024/03/White-Soup-Ofe-Nsala-Kadines-Soup-Pot.jpg" alt="Nsala Soup">
+                    </div>
+                    <div class="menu-item-content">
+                        <div class="menu-item-header">
+                            <h3 data-en="Nsala Soup" data-cn="恩萨拉汤">Nsala Soup</h3>
+                            <div class="price">$17</div>
+                        </div>
+                        <p data-en="White soup with yam, fish, and spices" data-cn="白汤配山药、鱼和香料">White soup with yam, fish, and spices</p>
+                    </div>
+                </div>
+                <div class="menu-item" data-category="igbo">
+                    <div class="menu-item-img">
+                        <a>
+                        <img src="https://www.allnigerianrecipes.com/wp-content/uploads/2019/03/banga-soup.jpg" alt="Ofe Akwu">
+                        </a>
+                    </div>
+                    <div class="menu-item-content">
+                        <div class="menu-item-header">
+                            <h3 data-en="Ofe Akwu" data-cn="奥费阿库">Ofe Akwu</h3>
+                            <div class="price">$19</div>
+                        </div>
+                        <p data-en="Oil bean soup with bitter leaf and palm oil" data-cn="油豆汤配苦叶和棕榈油">Oil bean soup with bitter leaf and palm oil</p>
+                    </div>
+                </div>
+                <div class="menu-item" data-category="igbo">
+                    <div class="menu-item-img">
+                        <img src="https://peppersoupmonster.com/wp-content/uploads/2024/12/e42d22ae-86b9-4a34-8a4e-01791d3d607f.jpeg" alt="Isi Ewu">
+                    </div>
+                    <div class="menu-item-content">
+                        <div class="menu-item-header">
+                            <h3 data-en="Isi Ewu" data-cn="伊西埃武">Isi Ewu</h3>
+                            <div class="price">$10</div>
+                        </div>
+                        <p data-en="Goat head stew with peppers and spices" data-cn="山羊头炖菜配辣椒和香料">Goat head stew with peppers and spices</p>
+                    </div>
+                </div>
+                <div class="menu-item" data-category="igbo">
+                    <div class="menu-item-img">
+                        <img src="https://shopafricausa.com/cdn/shop/articles/ogbono_788x.jpg?v=1566349969" alt="Ogbono Soup">
+                    </div>
+                    <div class="menu-item-content">
+                        <div class="menu-item-header">
+                            <h3 data-en="Ogbono Soup" data-cn="奥戈博诺汤">Ogbono Soup</h3>
+                            <div class="price">$16</div>
+                        </div>
+                        <p data-en="Dried ogbono seeds soup with vegetables and meat" data-cn="干奥戈博诺种子汤配蔬菜和肉">Dried ogbono seeds soup with vegetables and meat</p>
+                    </div>
+                </div>
+                <div class="menu-item" data-category="igbo">
+                    <div class="menu-item-img">
+                        <img src="https://theafrikanstore.com/cdn/shop/articles/Okpa_7cef1b15-de6a-4dad-b36f-2fd5d752f1c1_559x.jpg?v=1688451216" alt="Okpa">
+                    </div>
+                    <div class="menu-item-content">
+                        <div class="menu-item-header">
+                            <h3 data-en="Okpa" data-cn="奥克帕">Okpa</h3>
+                            <div class="price">$10</div>
+                        </div>
+                        <p data-en="Steamed bean pudding with peppers and spices" data-cn="蒸豆布丁配辣椒和香料">Steamed bean pudding with peppers and spices</p>
+                    </div>
+                </div>
+                <div class="menu-item" data-category="igbo">
+                    <div class="menu-item-img">
+                        <img src="https://theafrikanstore.com/cdn/shop/articles/IMG_8705_aeadb0c1-752b-4f1a-a9fd-170ae4b1ba5e_1024x1024.jpg?v=1688117379" alt="Ofe Owerri">
+                    </div>
+                    <div class="menu-item-content">
+                        <div class="menu-item-header">
+                            <h3 data-en="Ofe Owerri" data-cn="奥费奥韦里">Ofe Owerri</h3>
+                            <div class="price">$12</div>
+                        </div>
+                        <p data-en="Vegetable soup with cocoyam and palm oil" data-cn="蔬菜汤配芋头和棕榈油">Vegetable soup with cocoyam and palm oil</p>
+                    </div>
+                </div>
+                <div class="menu-item" data-category="igbo">
+                    <div class="menu-item-img">
+                        <img src="https://fabwoman.ng/wp-content/uploads/2018/02/ofe-achara-soup.jpg" alt="Achara">
+                    </div>
+                    <div class="menu-item-content">
+                        <div class="menu-item-header">
+                            <h3 data-en="Achara" data-cn="阿查拉">Achara</h3>
+                            <div class="price">$11</div>
+                        </div>
+                        <p data-en="Fermented cassava with vegetables and spices" data-cn="发酵木薯配蔬菜和香料">Fermented cassava with vegetables and spices</p>
+                    </div>
+                </div>
+                <div class="menu-item" data-category="igbo">
+                    <div class="menu-item-img">
+                        <img src="https://pbs.twimg.com/media/Gh9QZCdXkAANEQ4?format=jpg&name=large" alt="Oha Nri">
+                    </div>
+                    <div class="menu-item-content">
+                        <div class="menu-item-header">
+                            <h3 data-en="Oha Nri" data-cn="奥哈恩里">Oha Nri</h3>
+                            <div class="price">$18</div>
+                        </div>
+                        <p data-en="Traditional oha soup with special ceremonial ingredients" data-cn="传统奥哈汤配特殊仪式食材">Traditional oha soup with special ceremonial ingredients</p>
+                    </div>
+                </div>
+                <div class="menu-item" data-category="igbo">
+                    <div class="menu-item-img">
+                        <img src="https://cdn.guardian.ng/wp-content/uploads/2020/03/Yam-Pottage.-Photo-My-diaspora-kitchen.jpeg" alt="Nni Oka">
+                    </div>
+                    <div class="menu-item-content">
+                        <div class="menu-item-header">
+                            <h3 data-en="Nni Oka" data-cn="恩尼奥卡">Nni Oka</h3>
+                            <div class="price">$5</div>
+                        </div>
+                        <p data-en="Yam pottage with vegetables and palm oil" data-cn="山药浓汤配蔬菜和棕榈油">Yam pottage with vegetables and palm oil</p>
+                    </div>
+                </div>
+                <div class="menu-item" data-category="igbo">
+                    <div class="menu-item-img">
+                        <img src="https://proveg.org/ng/wp-content/uploads/sites/4/2024/04/Ofe-Onugbu2-scaled-e1696248823293.jpg" alt="Ofe Onugbu">
+                    </div>
+                    <div class="menu-item-content">
+                        <div class="menu-item-header">
+                            <h3 data-en="Ofe Onugbu" data-cn="奥费奥农布">Ofe Onugbu</h3>
+                            <div class="price">$16</div>
+                        </div>
+                        <p data-en="Bitter leaf soup with goat meat and palm oil" data-cn="苦叶汤配山羊肉和棕榈油">Bitter leaf soup with goat meat and palm oil</p>
+                    </div>
+                </div>
+                <div class="menu-item" data-category="igbo">
+                    <div class="menu-item-img">
+                        <img src="https://eatwellabi.com/wp-content/uploads/2022/05/Ugba-sauce-7-720x480.jpg" alt="Ugba">
+                    </div>
+                    <div class="menu-item-content">
+                        <div class="menu-item-header">
+                            <h3 data-en="Ugba" data-cn="乌格巴">Ugba</h3>
+                            <div class="price">$13</div>
+                        </div>
+                        <p data-en="Fermented oil bean salad with vegetables" data-cn="发酵油豆沙拉配蔬菜">Fermented oil bean salad with vegetables</p>
+                    </div>
+                </div>
+
+                <!-- Yoruba Dishes (20 items) -->
+                <div class="menu-item" data-category="yoruba">
+                    <div class="menu-item-img">
+                        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTgZVmQc_gNYpwzNP4D2T5or1QdsDsD9gWKew&s" alt="Amala & Ewedu">
+                    </div>
+                    <div class="menu-item-content">
+                        <div class="menu-item-header">
+                            <h3 data-en="Amala & Ewedu" data-cn="阿马拉和埃韦杜">Amala & Ewedu</h3>
+                            <div class="price">$17</div>
+                        </div>
+                        <p data-en="Yam flour paste with jute leaf soup and ponmo" data-cn="山药粉糊配秋葵叶汤和炖牛皮">Yam flour paste with jute leaf soup and ponmo</p>
+                    </div>
+                </div>
+                <div class="menu-item" data-category="yoruba">
+                    <div class="menu-item-img">
+                        <img src="https://primary.jwwb.nl/public/j/w/n/temp-qwphjddvlwejcxdsfxpj/image-high.png?enable-io=true&enable=upscale&crop=824%2C463%2Cx0%2Cy0%2Csafe&width=780&height=438" alt="Pounded Yam & Egusi">
+                    </div>
+                    <div class="menu-item-content">
+                        <div class="menu-item-header">
+                            <h3 data-en="Pounded Yam & Egusi" data-cn="木薯糊和埃古西汤">Pounded Yam & Egusi</h3>
+                            <div class="price">$19</div>
+                        </div>
+                        <p data-en="Traditional pounded yam with melon seed soup" data-cn="传统木薯糊配瓜子汤">Traditional pounded yam with melon seed soup</p>
+                    </div>
+                </div>
+                <div class="menu-item" data-category="yoruba">
+                    <div class="menu-item-img">
+                        <img src="https://sisijemimah.com/wp-content/uploads/2015/06/20190728_121338.jpg" alt="Iyan & Efo Riro">
+                    </div>
+                    <div class="menu-item-content">
+                        <div class="menu-item-header">
+                            <h3 data-en="Iyan & Efo Riro" data-cn="伊扬和埃福里罗">Iyan & Efo Riro</h3>
+                            <div class="price">$18</div>
+                        </div>
+                        <p data-en="Pounded yam with vegetable soup and assorted meats" data-cn="木薯糊配蔬菜汤和各种肉类">Pounded yam with vegetable soup and assorted meats</p>
+                    </div>
+                </div>
+                <div class="menu-item" data-category="yoruba">
+                    <div class="menu-item-img">
+                        <img src="https://images.squarespace-cdn.com/content/v1/5f61fdbf6089cf5861823eb9/1611349931599-3T2LJVRJ0VGDTV6SH1SV/DSC_0797.jpg" alt="Moi Moi">
+                    </div>
+                    <div class="menu-item-content">
+                        <div class="menu-item-header">
+                            <h3 data-en="Moi Moi" data-cn="莫伊莫伊">Moi Moi</h3>
+                            <div class="price">$10</div>
+                        </div>
+                        <p data-en="Steamed bean pudding with fish and peppers" data-cn="蒸豆布丁配鱼和辣椒">Steamed bean pudding with fish and peppers</p>
+                    </div>
+                </div>
+                <div class="menu-item" data-category="yoruba">
+                    <div class="menu-item-img">
+                        <img src="https://kscuisine.com/wp-content/uploads/2019/09/IMG_20190811_152627_181.jpg" alt="Obe Eja">
+                    </div>
+                    <div class="menu-item-content">
+                        <div class="menu-item-header">
+                            <h3 data-en="Obe Eja" data-cn="奥贝埃贾">Obe Eja</h3>
+                            <div class="price">$12</div>
+                        </div>
+                        <p data-en="Fish stew with tomatoes, peppers, and spices" data-cn="鱼炖菜配番茄、辣椒和香料">Fish stew with tomatoes, peppers, and spices</p>
+                    </div>
+                </div>
+                <div class="menu-item" data-category="yoruba">
+                    <div class="menu-item-img">
+                        <img src="https://kscuisine.com/wp-content/uploads/2020/02/Akara-pic.jpeg" alt="Akara">
+                    </div>
+                    <div class="menu-item-content">
+                        <div class="menu-item-header">
+                            <h3 data-en="Akara" data-cn="阿卡拉">Akara</h3>
+                            <div class="price">$8</div>
+                        </div>
+                        <p data-en="Deep-fried bean cakes with peppers" data-cn="油炸豆饼配辣椒">Deep-fried bean cakes with peppers</p>
+                    </div>
+                </div>
+                <div class="menu-item" data-category="yoruba">
+                    <div class="menu-item-img">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/d/d7/Okro_soup_with_beef_and_Seafoods.jpg" alt="Ila Alasepo">
+                    </div>
+                    <div class="menu-item-content">
+                        <div class="menu-item-header">
+                            <h3 data-en="Ila Alasepo" data-cn="伊拉阿拉塞波">Ila Alasepo</h3>
+                            <div class="price">$25</div>
+                        </div>
+                        <p data-en="Vegetable soup with locust beans and palm oil" data-cn="蔬菜汤配刺槐豆和棕榈油">Vegetable soup with locust beans and palm oil</p>
+                    </div>
+                </div>
+                <div class="menu-item" data-category="yoruba">
+                    <div class="menu-item-img">
+                        <img src="https://www.myactivekitchen.com/wp-content/uploads/2015/03/abula-gbegiri-recipe-img-2.jpg" alt="Gbegiri">
+                    </div>
+                    <div class="menu-item-content">
+                        <div class="menu-item-header">
+                            <h3 data-en="Gbegiri" data-cn="格贝吉里">Gbegiri</h3>
+                            <div class="price">$12</div>
+                        </div>
+                        <p data-en="Honey bean soup with vegetables and spices" data-cn="蜜豆汤配蔬菜和香料">Honey bean soup with vegetables and spices</p>
+                    </div>
+                </div>
+                <div class="menu-item" data-category="yoruba">
+                    <div class="menu-item-img">
+                        <img src="https://i0.wp.com/outravelandtour.com/wp-content/uploads/2025/01/images-2025-01-13T163142.813.jpeg?fit=678%2C452&ssl=1" alt="Ewedu & Gbegiri">
+                    </div>
+                    <div class="menu-item-content">
+                        <div class="menu-item-header">
+                            <h3 data-en="Ewedu & Gbegiri" data-cn="埃韦杜和格贝吉里">Ewedu & Gbegiri</h3>
+                            <div class="price">$15</div>
+                        </div>
+                        <p data-en="Jute leaf soup with honey bean soup combo" data-cn="秋葵叶汤配蜜豆汤组合">Jute leaf soup with honey bean soup combo</p>
+                    </div>
+                </div>
+                <div class="menu-item" data-category="yoruba">
+                    <div class="menu-item-img">
+                        <img src="https://gfb.global.ssl.fastly.net/wp-content/uploads/2015/09/plantain-moi-moi-ukpo-ogede-1.jpg" alt="Ogede">
+                    </div>
+                    <div class="menu-item-content">
+                        <div class="menu-item-header">
+                            <h3 data-en="Ogede" data-cn="奥格德">Ogede</h3>
+                            <div class="price">$14</div>
+                        </div>
+                        <p data-en="Okra soup with fish and palm oil" data-cn="秋葵汤配鱼和棕榈油">Okra soup with fish and palm oil</p>
+                    </div>
+                </div>
+                <div class="menu-item" data-category="yoruba">
+                    <div class="menu-item-img">
+                        <img src="https://img-global.cpcdn.com/recipes/4113574ad9f65888/240x320cq80/photo.jpg" alt="Adalu">
+                    </div>
+                    <div class="menu-item-content">
+                        <div class="menu-item-header">
+                            <h3 data-en="Adalu" data-cn="阿达卢">Adalu</h3>
+                            <div class="price">$13</div>
+                        </div>
+                        <p data-en="Corn and beans porridge with vegetables" data-cn="玉米豆粥配蔬菜">Corn and beans porridge with vegetables</p>
+                    </div>
+                </div>
+                <div class="menu-item" data-category="yoruba">
+                    <div class="menu-item-img">
+                        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQmHWJKuw4w6DSP_7oB46iELb7dudpPDILdSA&s" alt="Efo Iro">
+                    </div>
+                    <div class="menu-item-content">
+                        <div class="menu-item-header">
+                            <h3 data-en="Efo Iro" data-cn="埃福伊罗">Efo Iro</h3>
+                            <div class="price">$16</div>
+                        </div>
+                        <p data-en="Spinach stew with meat and palm oil" data-cn="菠菜炖菜配肉和棕榈油">Spinach stew with meat and palm oil</p>
+                    </div>
+                </div>
+                <div class="menu-item" data-category="yoruba">
+                    <div class="menu-item-img">
+                        <img src="https://dobbyssignature.com/wp-content/uploads/2022/08/Ikokore-735x490.jpg" alt="Ikokore">
+                    </div>
+                    <div class="menu-item-content">
+                        <div class="menu-item-header">
+                            <h3 data-en="Ikokore" data-cn="伊科科雷">Ikokore</h3>
+                            <div class="price">$11</div>
+                        </div>
+                        <p data-en="Steamed bean pudding with peppers and fish" data-cn="蒸豆布丁配辣椒和鱼">Steamed bean pudding with peppers and fish</p>
+                    </div>
+                </div>
+                <div class="menu-item" data-category="yoruba">
+                    <div class="menu-item-img">
+                        <img src="https://www.seriouseats.com/thmb/zO5qobwKewdVMul9U2vxXL3Tupc=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/__opt__aboutcom__coeus__resources__content_migration__serious_eats__seriouseats.com__2020__02__20200224-obe-ata-vicky-wasik-23-48ef3dfb1176452f99d4a0c6fbed3e16.jpg" alt="Obe Dodi">
+                    </div>
+                    <div class="menu-item-content">
+                        <div class="menu-item-header">
+                            <h3 data-en="Obe Dodi" data-cn="奥贝多迪">Obe Dodi</h3>
+                            <div class="price">$28</div>
+                        </div>
+                        <p data-en="Leafy vegetable soup with assorted meats" data-cn="绿叶蔬菜汤配各种肉类">Leafy vegetable soup with assorted meats</p>
+                    </div>
+                </div>
+                <div class="menu-item" data-category="yoruba">
+                    <div class="menu-item-img">
+                        <img src="https://rexclarkeadventures.com/wp-content/uploads/2024/09/images-1.jpeg" alt="Ogi">
+                    </div>
+                    <div class="menu-item-content">
+                        <div class="menu-item-header">
+                            <h3 data-en="Ogi and Akara" data-cn="奥吉">Ogi</h3>
+                            <div class="price">$7</div>
+                        </div>
+                        <p data-en="Fermented corn porridge with milk or sugar and Deep-fried bean cakes with peppers " data-cn="发酵玉米粥配牛奶或糖">Fermented corn porridge with milk or sugar</p>
+                    </div>
+                </div>
+                <div class="menu-item" data-category="yoruba">
+                    <div class="menu-item-img">
+                        <img src="https://niammy.com/img/public/990/201903/1553622442_11986.jpg" alt="Agidi">
+                    </div>
+                    <div class="menu-item-content">
+                        <div class="menu-item-header">
+                            <h3 data-en="Agidi" data-cn="阿吉迪">Agidi</h3>
+                            <div class="price">$9</div>
+                        </div>
+                        <p data-en="Steamed corn pudding with vegetables" data-cn="蒸玉米布丁配蔬菜">Steamed corn pudding with vegetables</p>
+                    </div>
+                </div>
+                <div class="menu-item" data-category="yoruba">
+                    <div class="menu-item-img">
+                        <img src="https://www.citysaver.ng/wp-content/uploads/2024/03/beans.jpg" alt="Ewa Agoyin">
+                    </div>
+                    <div class="menu-item-content">
+                        <div class="menu-item-header">
+                            <h3 data-en="Ewa Agoyin" data-cn="埃瓦阿戈因">Ewa Agoyin</h3>
+                            <div class="price">$12</div>
+                        </div>
+                        <p data-en="Fried black-eyed peas with pepper sauce and fried ripe plantain" data-cn="油炸黑眼豆配辣椒酱">Fried black-eyed peas with pepper sauce</p>
+                    </div>
+                </div>
+                <div class="menu-item" data-category="yoruba">
+                    <div class="menu-item-img">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/c/ca/Iyan_%26_Efo-Riro_%287370530836%29.jpg" alt="Iyan Alade">
+                    </div>
+                    <div class="menu-item-content">
+                        <div class="menu-item-header">
+                            <h3 data-en="Iyan Alade" data-cn="伊扬阿拉德">Iyan Alade</h3>
+                            <div class="price">$20</div>
+                        </div>
+                        <p data-en="Pounded yam with special pepper soup" data-cn="木薯糊配特色辣椒汤">Pounded yam with special pepper soup</p>
+                    </div>
+                </div>
+                <div class="menu-item" data-category="yoruba">
+                    <div class="menu-item-img">
+                        <img src="https://i0.wp.com/kscuisine.com/wp-content/uploads/2019/05/20190528091109_IMG_6062-01.jpeg?resize=694%2C1024&ssl=1" alt="Obe Ata Dudu">
+                    </div>
+                    <div class="menu-item-content">
+                        <div class="menu-item-header">
+                            <h3 data-en="Obe Ata Dudu" data-cn="奥贝阿塔杜杜">Obe Ata Dudu</h3>
+                            <div class="price">$17</div>
+                        </div>
+                        <p data-en="Black pepper soup with assorted meats" data-cn="黑胡椒汤配各种肉类">Black pepper soup with assorted meats</p>
+                    </div>
+                </div>
+
+                <!-- Hausa Dishes (20 items) -->
+                <div class="menu-item" data-category="hausa">
+                    <div class="menu-item-img">
+                        <img src="https://www.tasteatlas.com/images/dishes/b567d96cdb894af28c335ff26c3fb393.jpg" alt="Tuwo Shinkafa">
+                    </div>
+                    <div class="menu-item-content">
+                        <div class="menu-item-header">
+                            <h3 data-en="Tuwo Shinkafa" data-cn="图沃辛卡法">Tuwo Shinkafa</h3>
+                            <div class="price">$15</div>
+                        </div>
+                        <p data-en="Rice flour porridge with miyan kuka soup" data-cn="米面粉粥配米扬库卡汤">Rice flour porridge with miyan kuka soup</p>
+                    </div>
+                </div>
+                <div class="menu-item" data-category="hausa">
+                    <div class="menu-item-img">
+                        <img src="https://www.allrecipes.com/thmb/DVgoi6sgGt0wzOFhrFuGYCwo2as=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/7497838WestAfricanGrilledBeefSujaChefJohn2x1-9d89838a2abd45bc8c1f096f437fe223.jpg" alt="Suya">
+                    </div>
+                    <div class="menu-item-content">
+                        <div class="menu-item-header">
+                            <h3 data-en="Suya" data-cn="苏亚">Suya</h3>
+                            <div class="price">$12</div>
+                        </div>
+                        <p data-en="Spicy grilled meat skewers with ground peanuts" data-cn="辣味烤肉串配花生粉">Spicy grilled meat skewers with ground peanuts</p>
+                    </div>
+                </div>
+                <div class="menu-item" data-category="hausa">
+                    <div class="menu-item-img">
+                        <img src="https://rexclarkeadventures.com/wp-content/uploads/2024/09/maxresdefault-4-1.jpg" alt="Fura da Noni">
+                    </div>
+                    <div class="menu-item-content">
+                        <div class="menu-item-header">
+                            <h3 data-en="Fura da Noni" data-cn="富拉达诺尼">Fura da Noni</h3>
+                            <div class="price">$8</div>
+                        </div>
+                        <p data-en="Millet porridge with yogurt and spices" data-cn="小米粥配酸奶和香料">Millet porridge with yogurt and spices</p>
+                    </div>
+                </div>
+                <div class="menu-item" data-category="hausa">
+                    <div class="menu-item-img">
+                        <img src="https://afrifoodnetwork.com/wp-content/uploads/2023/07/DD0A30FB-F04E-4A9C-8AAB-6B1727DE8621-e1690281168409.jpeg" alt="Kilishi">
+                    </div>
+                    <div class="menu-item-content">
+                        <div class="menu-item-header">
+                            <h3 data-en="Kilishi" data-cn="基利希">Kilishi</h3>
+                            <div class="price">$11</div>
+                        </div>
+                        <p data-en="Spiced dried meat strips with groundnut powder" data-cn="香料干肉条配花生粉">Spiced dried meat strips with groundnut powder</p>
+                    </div>
+                </div>
+                <div class="menu-item" data-category="hausa">
+                    <div class="menu-item-img">
+                        <img src="https://www.foodnify.com/wp-content/uploads/2024/09/miyan-kuka.jpg" alt="Miyan Kuka">
+                    </div>
+                    <div class="menu-item-content">
+                        <div class="menu-item-header">
+                            <h3 data-en="Miyan Kuka" data-cn="米扬库卡">Miyan Kuka</h3>
+                            <div class="price">$14</div>
+                        </div>
+                        <p data-en="Baobab leaf soup with meat and spices" data-cn="猴面包树叶汤配肉和香料">Baobab leaf soup with meat and spices</p>
+                    </div>
+                </div>
+                <div class="menu-item" data-category="hausa">
+                    <div class="menu-item-img">
+                        <img src="https://img-global.cpcdn.com/recipes/104b9cb16b49f507/240x320cq80/photo.jpg" alt="Tuwo Masara">
+                    </div>
+                    <div class="menu-item-content">
+                        <div class="menu-item-header">
+                            <h3 data-en="Tuwo Masara" data-cn="图沃马萨拉">Tuwo Masara</h3>
+                            <div class="price">$13</div>
+                        </div>
+                        <p data-en="Maize flour porridge with miyan taushe" data-cn="玉米面粉粥配米扬陶舍">Maize flour porridge with miyan taushe</p>
+                    </div>
+                </div>
+                <div class="menu-item" data-category="hausa">
+                    <div class="menu-item-img">
+                        <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEiyv519CkB981y6Bdpaxzt89tCcxC8ZDt3uoLhOPxpoKegCADGGkkEfbE34cAz0C6V8d09qQiKRmwf01VbSCcPQbgkPyTLyzv0RFkIEUgKgyYlzG247oxA9JCR6iACRvYYn04r50CINUSfZ/s1600/dambuA.jpg" alt="Dambu">
+                    </div>
+                    <div class="menu-item-content">
+                        <div class="menu-item-header">
+                            <h3 data-en="Dambu" data-cn="丹布">Dambu</h3>
+                            <div class="price">$10</div>
+                        </div>
+                        <p data-en="Spiced shredded meat with groundnut powder" data-cn="香料碎肉配花生粉">Spiced shredded meat with groundnut powder</p>
+                    </div>
+                </div>
+                <div class="menu-item" data-category="hausa">
+                    <div class="menu-item-img">
+                        <img src="https://www.seriouseats.com/thmb/p68qtlO1JylyEL1SI-a97x87DTY=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/20240510-SEA-NigerianPeanutStew-VyTran-hero-d69f7c4884494774a56e7517fa38f6d2.jpg" alt="Alawa">
+                    </div>
+                    <div class="menu-item-content">
+                        <div class="menu-item-header">
+                            <h3 data-en="Alawa" data-cn="阿拉瓦">Alawa</h3>
+                            <div class="price">$8</div>
+                        </div>
+                        <p data-en="Fried meat with groundnut paste and spices" data-cn="油炸肉配花生酱和香料">Fried meat with groundnut paste and spices</p>
+                    </div>
+                </div>
+                <div class="menu-item" data-category="hausa">
+                    <div class="menu-item-img">
+                        <img src="https://eatwellabi.com/wp-content/uploads/2021/12/miyan-taushe-13.jpg" alt="Miyan Taushe">
+                    </div>
+                    <div class="menu-item-content">
+                        <div class="menu-item-header">
+                            <h3 data-en="Miyan Taushe" data-cn="米扬陶舍">Miyan Taushe</h3>
+                            <div class="price">$15</div>
+                        </div>
+                        <p data-en="Vegetable soup with okra and palm oil" data-cn="蔬菜汤配秋葵和棕榈油">Vegetable soup with okra and palm oil</p>
+                    </div>
+                </div>
+                <div class="menu-item" data-category="hausa">
+                    <div class="menu-item-img">
+                        <img src="https://kscuisine.com/wp-content/uploads/2020/02/Akara-pic.jpeg" alt="Warawa">
+                    </div>
+                    <div class="menu-item-content">
+                        <div class="menu-item-header">
+                            <h3 data-en="Warawa" data-cn="瓦拉瓦">Warawa</h3>
+                            <div class="price">$9</div>
+                        </div>
+                        <p data-en="Fried bean cakes with peppers and spices" data-cn="油炸豆饼配辣椒和香料">Fried bean cakes with peppers and spices</p>
+                    </div>
+                </div>
+                <div class="menu-item" data-category="hausa">
+                    <div class="menu-item-img">
+                        <img src="https://cheflolaskitchen.com/wp-content/uploads/2023/05/nigerian-masa-20-683x1024.jpg.webp" alt="Masa">
+                    </div>
+                    <div class="menu-item-content">
+                        <div class="menu-item-header">
+                            <h3 data-en="Masa" data-cn="马萨">Masa</h3>
+                            <div class="price">$9</div>
+                        </div>
+                        <p data-en="Fried rice cakes with vegetables and spices" data-cn="油炸米饼配蔬菜和香料">Fried rice cakes with vegetables and spices</p>
+                    </div>
+                </div>
+                <div class="menu-item" data-category="hausa">
+                    <div class="menu-item-img">
+                        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSs8lGsAu-wd5ZPHXc0YFKZ-wpJYdTjPsFG3Q&s" alt="Miyan Zogale">
+                    </div>
+                    <div class="menu-item-content">
+                        <div class="menu-item-header">
+                            <h3 data-en="Miyan Zogale" data-cn="米扬佐加勒">Miyan Zogale</h3>
+                            <div class="price">$15</div>
+                        </div>
+                        <p data-en="Baobab soup with vegetables and meat" data-cn="猴面包树汤配蔬菜和肉">Baobab soup with vegetables and meat</p>
+                    </div>
+                </div>
+                <div class="menu-item" data-category="hausa">
+                    <div class="menu-item-img">
+                        <img src="https://www.yummymedley.com/wp-content/uploads/2017/11/Miyan-Taushe-06-500x500.jpg" alt="Tushe">
+                    </div>
+                    <div class="menu-item-content">
+                        <div class="menu-item-header">
+                            <h3 data-en="Tushe" data-cn="图舍">Tushe</h3>
+                            <div class="price">$12</div>
+                        </div>
+                        <p data-en="Corn porridge with vegetables and spices" data-cn="玉米粥配蔬菜和香料">Corn porridge with vegetables and spices</p>
+                    </div>
+                </div>
+                <!-- Chinese Dishes (20 items) -->
+                <div class="menu-item" data-category="chinese">
+                    <div class="menu-item-img">
+                        <img src="https://thewoksoflife.com/wp-content/uploads/2015/11/peking-duck-recipe-11-1-500x500.jpg" alt="Peking Duck">
+                    </div>
+                    <div class="menu-item-content">
+                        <div class="menu-item-header">
+                            <h3 data-en="Peking Duck" data-cn="北京烤鸭">Peking Duck</h3>
+                            <div class="price">$32</div>
+                        </div>
+                        <p data-en="Crispy duck served with pancakes, scallions, and hoisin sauce" data-cn="脆皮鸭配薄饼、葱丝和海鲜酱">Crispy duck served with pancakes, scallions, and hoisin sauce</p>
+                    </div>
+                </div>
+                <div class="menu-item" data-category="chinese">
+                    <div class="menu-item-img">
+                        <img src="https://www.onceuponachef.com/images/2018/05/Kung-Pao-Chicken-16-1200x1480.jpg" alt="Kung Pao Chicken">
+                    </div>
+                    <div class="menu-item-content">
+                        <div class="menu-item-header">
+                            <h3 data-en="Kung Pao Chicken" data-cn="宫保鸡丁">Kung Pao Chicken</h3>
+                            <div class="price">$22</div>
+                        </div>
+                        <p data-en="Spicy stir-fried chicken with peanuts and vegetables" data-cn="辣味炒鸡丁配花生和蔬菜">Spicy stir-fried chicken with peanuts and vegetables</p>
+                    </div>
+                </div>
+                <div class="menu-item" data-category="chinese">
+                    <div class="menu-item-img">
+                        <img src="https://torontolife.mblycdn.com/tl/resized/2015/02/w1280/luckee-toronto-restaurants-annotated1.jpg" alt="Dim Sum">
+                    </div>
+                    <div class="menu-item-content">
+                        <div class="menu-item-header">
+                            <h3 data-en="Dim Sum Platter" data-cn="点心拼盘">Dim Sum Platter</h3>
+                            <div class="price">$25</div>
+                        </div>
+                        <p data-en="Assorted steamed dumplings with pork, shrimp, and vegetables" data-cn="混合蒸饺配猪肉、虾和蔬菜">Assorted steamed dumplings with pork, shrimp, and vegetables</p>
+                    </div>
+                </div>
+                <div class="menu-item" data-category="chinese">
+                    <div class="menu-item-img">
+                        <img src="https://assets.epicurious.com/photos/624b45cc1184c47f7e94b17e/16:9/w_5989,h_3368,c_limit/MapoTofu_RECIPE_033122_31225.jpg" alt="Mapo Tofu">
+                    </div>
+                    <div class="menu-item-content">
+                        <div class="menu-item-header">
+                            <h3 data-en="Mapo Tofu" data-cn="麻婆豆腐">Mapo Tofu</h3>
+                            <div class="price">$18</div>
+                        </div>
+                        <p data-en="Spicy tofu with minced meat in chili bean sauce" data-cn="辣味豆腐配肉末和豆瓣酱">Spicy tofu with minced meat in chili bean sauce</p>
+                    </div>
+                </div>
+                <div class="menu-item" data-category="chinese">
+                    <div class="menu-item-img">
+                        <img src="https://www.foodelicacy.com/wp-content/uploads/2020/10/sweet-sour-pork-1C.jpg" alt="Sweet and Sour Pork">
+                    </div>
+                    <div class="menu-item-content">
+                        <div class="menu-item-header">
+                            <h3 data-en="Sweet and Sour Pork" data-cn="糖醋里脊">Sweet and Sour Pork</h3>
+                            <div class="price">$20</div>
+                        </div>
+                        <p data-en="Crispy pork with pineapple in sweet and sour sauce" data-cn="酥脆猪肉配菠萝和糖醋酱">Crispy pork with pineapple in sweet and sour sauce</p>
+                    </div>
+                </div>
+                <div class="menu-item" data-category="chinese">
+                    <div class="menu-item-img">
+                        <img src="https://khinskitchen.com/wp-content/uploads/2024/05/chicken-chow-mein-01.jpg" alt="Chow Mein">
+                    </div>
+                    <div class="menu-item-content">
+                        <div class="menu-item-header">
+                            <h3 data-en="Chicken Chow Mein" data-cn="鸡肉炒面">Chicken Chow Mein</h3>
+                            <div class="price">$19</div>
+                        </div>
+                        <p data-en="Stir-fried noodles with chicken and vegetables" data-cn="炒鸡肉面条配蔬菜">Stir-fried noodles with chicken and vegetables</p>
+                    </div>
+                </div>
+                <div class="menu-item" data-category="chinese">
+                    <div class="menu-item-img">
+                        <img src="https://somuchfoodblog.com/wp-content/uploads/2022/02/basil-chicken-wonton-soup2-scaled.jpg" alt="Wonton Soup">
+                    </div>
+                    <div class="menu-item-content">
+                        <div class="menu-item-header">
+                            <h3 data-en="Wonton Soup" data-cn="馄饨汤">Wonton Soup</h3>
+                            <div class="price">$14</div>
+                        </div>
+                        <p data-en="Dumplings in clear broth with vegetables" data-cn="清汤馄饨配蔬菜">Dumplings in clear broth with vegetables</p>
+                    </div>
+                </div>
+                <div class="menu-item" data-category="chinese">
+                    <div class="menu-item-img">
+                        <img src="https://images.squarespace-cdn.com/content/v1/51f7fb1ee4b03d20c9b4c34b/1621520026051-LE6B6Q8TTXGL5K38W6DP/general+tso%27s+chicken.jpeg?format=500w" alt="General Tso's Chicken">
+                    </div>
+                    <div class="menu-item-content">
+                        <div class="menu-item-header">
+                            <h3 data-en="General Tso's Chicken" data-cn="左宗棠鸡">General Tso's Chicken</h3>
+                            <div class="price">$23</div>
+                        </div>
+                        <p data-en="Crispy chicken in sweet and spicy sauce with broccoli" data-cn="酥脆鸡肉配甜辣酱和西兰花">Crispy chicken in sweet and spicy sauce with broccoli</p>
+                    </div>
+                </div>
+                <div class="menu-item" data-category="chinese">
+                    <div class="menu-item-img">
+                        <img src="https://drivemehungry.com/wp-content/uploads/2020/07/egg-drop-soup-11.jpg" alt="Egg Drop Soup">
+                    </div>
+                    <div class="menu-item-content">
+                        <div class="menu-item-header">
+                            <h3 data-en="Egg Drop Soup" data-cn="蛋花汤">Egg Drop Soup</h3>
+                            <div class="price">$8</div>
+                        </div>
+                        <p data-en="Silky soup with beaten eggs and scallions" data-cn="丝滑蛋汤配葱花">Silky soup with beaten eggs and scallions</p>
+                    </div>
+                </div>
+                <div class="menu-item" data-category="chinese">
+                    <div class="menu-item-img">
+                        <img src="https://yeyfood.com/wp-content/uploads/2024/11/WEB1A_bowl_of_Chinese-style_crispy_beef_with_red_peppe_d0177e80-7a49-4676-b8ff-839d01200967_0-720x720.jpg" alt="Mongolian Beef">
+                    </div>
+                    <div class="menu-item-content">
+                        <div class="menu-item-header">
+                            <h3 data-en="Mongolian Beef" data-cn="蒙古牛肉">Mongolian Beef</h3>
+                            <div class="price">$26</div>
+                        </div>
+                        <p data-en="Stir-fried beef with onions in savory sauce" data-cn="炒牛肉配洋葱和美味酱汁">Stir-fried beef with onions in savory sauce</p>
+                    </div>
+                </div>
+                <div class="menu-item" data-category="chinese">
+                    <div class="menu-item-img">
+                        <img src="https://carlsbadcravings.com/wp-content/uploads/2019/12/szechuan-chicken-7.jpg" alt="Szechuan Chicken">
+                    </div>
+                    <div class="menu-item-content">
+                        <div class="menu-item-header">
+                            <h3 data-en="Szechuan Chicken" data-cn="四川鸡">Szechuan Chicken</h3>
+                            <div class="price">$22</div>
+                        </div>
+                        <p data-en="Spicy chicken with vegetables and Szechuan peppercorns" data-cn="辣味鸡肉配蔬菜和四川花椒">Spicy chicken with vegetables and Szechuan peppercorns</p>
+                    </div>
+                </div>
+                <div class="menu-item" data-category="chinese">
+                    <div class="menu-item-img">
+                        <img src="https://omnivorescookbook.com/wp-content/uploads/2022/09/220908_Air-Fryer-Char-Siu-Pork_550-500x500.jpg" alt="Char Siu">
+                    </div>
+                    <div class="menu-item-content">
+                        <div class="menu-item-header">
+                            <h3 data-en="Char Siu" data-cn="叉烧">Char Siu</h3>
+                            <div class="price">$25</div>
+                        </div>
+                        <p data-en="Barbecued pork with sweet glaze" data-cn="烧烤猪肉配甜酱">Barbecued pork with sweet glaze</p>
+                    </div>
+                </div>
+                <div class="menu-item" data-category="chinese">
+                    <div class="menu-item-img">
+                        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTD9Op98zoU2DPulTyW3-KdtKe7Olv6CGsh9A&s" alt="Ma Po Tofu">
+                    </div>
+                    <div class="menu-item-content">
+                        <div class="menu-item-header">
+                            <h3 data-en="Ma Po Tofu" data-cn="麻婆豆腐">Ma Po Tofu</h3>
+                            <div class="price">$17</div>
+                        </div>
+                        <p data-en="Spicy tofu with ground pork and fermented black beans" data-cn="辣味豆腐配猪肉末和发酵黑豆">Spicy tofu with ground pork and fermented black beans</p>
+                    </div>
+                </div>
+                <div class="menu-item" data-category="chinese">
+                    <div class="menu-item-img">
+                        <img src="https://twoplaidaprons.com/wp-content/uploads/2020/05/Chinese-pork-dumplings-picking-up-a-dumpling-with-chopsticks.jpg" alt="Dumplings">
+                    </div>
+                    <div class="menu-item-content">
+                        <div class="menu-item-header">
+                            <h3 data-en="Steamed Dumplings" data-cn="蒸饺">Steamed Dumplings</h3>
+                            <div class="price">$15</div>
+                        </div>
+                        <p data-en="Delicate dumplings with pork and vegetables" data-cn="精致饺子配猪肉和蔬菜">Delicate dumplings with pork and vegetables</p>
+                    </div>
+                </div>
+                <div class="menu-item" data-category="chinese">
+                    <div class="menu-item-img">
+                        <img src="https://theroamingrenegades.com/wp-content/uploads/2017/01/15095661_10153844358951008_8232966379614555149_n-1.jpg" alt="Hot Pot">
+                    </div>
+                    <div class="menu-item-content">
+                        <div class="menu-item-header">
+                            <h3 data-en="Sichuan Hot Pot" data-cn="四川火锅">Sichuan Hot Pot</h3>
+                            <div class="price">$35</div>
+                        </div>
+                        <p data-en="Spicy broth with assorted meats, vegetables, and tofu" data-cn="辣味汤底配各种肉类、蔬菜和豆腐">Spicy broth with assorted meats, vegetables, and tofu</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section class="testimonials" id="testimonials">
+        <div class="container">
+            <div class="section-title">
+                <h2 data-en="What Our Guests Say" data-cn="客人评价">What Our Guests Say</h2>
+            </div>
+            <div class="testimonial-container">
+                <div class="testimonial">
+                    <p data-en="\"The authenticity of flavors at Earth Feast is unparalleled. Each dish tells a story of its cultural heritage. The Igbo Oha Soup was exactly how my grandmother used to make it!\"" data-cn="\"Earth Feast的风味真实性无与伦比。每道菜都讲述着其文化遗产的故事。伊博的奥哈汤就像我祖母做的一样！\"">"The authenticity of flavors at Earth Feast is unparalleled. Each dish tells a story of its cultural heritage. The Igbo Oha Soup was exactly how my grandmother used to make it!"</p>
+                    <div class="client">
+                        <img src="https://randomuser.me/api/portraits/women/44.jpg" alt="Client">
+                        <div class="client-info">
+                            <h4 data-en="Chidinma Okonkwo" data-cn="奇迪玛·奥孔科">Chidinma Okonkwo</h4>
+                            <p data-en="Food Enthusiast" data-cn="美食爱好者">Food Enthusiast</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="contact" id="contact">
+        <div class="container">
+            <div class="section-title">
+                <h2 data-en="Contact Us" data-cn="联系我们">Contact Us</h2>
+            </div>
+            <div class="contact-container">
+                <div class="contact-info">
+                    <h3 data-en="Get In Touch" data-cn="联系我们">Get In Touch</h3>
+                    <div class="contact-detail">
+                        <div class="contact-icon">
+                            <i class="fas fa-map-marker-alt"></i>
+                        </div>
+                        <div class="contact-text">
+                            <h4 data-en="Location" data-cn="地址">Location</h4>
+                            <p data-en="123 Global Flavors Street, Culinary District, New York, NY 10001" data-cn="纽约市烹饪区环球风味街123号，10001">123 Global Flavors Street, Culinary District, New York, NY 10001</p>
+                        </div>
+                    </div>
+                    <div class="contact-detail">
+                        <div class="contact-icon">
+                            <i class="fas fa-phone"></i>
+                        </div>
+                        <div class="contact-text">
+                            <h4 data-en="Phone" data-cn="电话">Phone</h4>
+                            <p><a href="tel:+11234567890" data-en="+1 (123) 456-7890" data-cn="+1 (123) 456-7890">+1 (123) 456-7890</a></p>
+                        </div>
+                    </div>
+                    <div class="contact-detail">
+                        <div class="contact-icon">
+                            <i class="fas fa-envelope"></i>
+                        </div>
+                        <div class="contact-text">
+                            <h4 data-en="Email" data-cn="邮箱">Email</h4>
+                            <p><a href="mailto:info@earthfeast.com" data-en="info@earthfeast.com" data-cn="info@earthfeast.com">info@earthfeast.com</a></p>
+                        </div>
+                    </div>
+                    <div class="contact-detail">
+                        <div class="contact-icon">
+                            <i class="fas fa-clock"></i>
+                        </div>
+                        <div class="contact-text">
+                            <h4 data-en="Opening Hours" data-cn="营业时间">Opening Hours</h4>
+                            <p data-en="Monday - Friday: 11:00 AM - 10:00 PM" data-cn="周一至周五：上午11:00 - 晚上10:00">Monday - Friday: 11:00 AM - 10:00 PM</p>
+                            <p data-en="Saturday - Sunday: 10:00 AM - 11:00 PM" data-cn="周六至周日：上午10:00 - 晚上11:00">Saturday - Sunday: 10:00 AM - 11:00 PM</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="contact-form">
+                    <form action="https://formspree.io/f/xblkygwg" method="POST">
+                        <div class="form-group">
+                            <label for="name" data-en="Name" data-cn="姓名">Name</label>
+                            <input type="text" name="name" id="name" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="email" data-en="Email" data-cn="邮箱">Email</label>
+                            <input type="email" name="email" id="email" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="subject" data-en="Subject" data-cn="主题">Subject</label>
+                            <input type="text" name="subject" id="subject">
+                        </div>
+                        <div class="form-group">
+                            <label for="message" data-en="Message" data-cn="信息">Message</label>
+                            <textarea id="message" name="message" required></textarea>
+                        </div>
+                        <button type="submit" class="btn" data-en="Send Message" data-cn="发送信息">Send Message</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-column">
+                    <h3>Earth Feast</h3>
+                    <p data-en="Bringing authentic flavors from around the world to your table. Experience the richness of diverse culinary traditions in every bite." data-cn="将世界各地的正宗风味带到您的餐桌。在每一口中体验多元烹饪传统的丰富性。">Bringing authentic flavors from around the world to your table. Experience the richness of diverse culinary traditions in every bite.</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+                <div class="footer-column">
+                    <h3 data-en="Quick Links" data-cn="快速链接">Quick Links</h3>
+                    <ul class="footer-links">
+                        <li><a href="#home" data-en="Home" data-cn="首页">Home</a></li>
+                        <li><a href="#about" data-en="About Us" data-cn="关于我们">About Us</a></li>
+                        <li><a href="#menu" data-en="Our Menu" data-cn="我们的菜单">Our Menu</a></li>
+                        <li><a href="#testimonials" data-en="Testimonials" data-cn="评价">Testimonials</a></li>
+                        <li><a href="#contact" data-en="Contact" data-cn="联系">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3 data-en="Opening Hours" data-cn="营业时间">Opening Hours</h3>
+                    <ul class="footer-links">
+                        <li data-en="Monday - Friday: 11:00 AM - 10:00 PM" data-cn="周一至周五：上午11:00 - 晚上10:00">Monday - Friday: 11:00 AM - 10:00 PM</li>
+                        <li data-en="Saturday: 10:00 AM - 11:00 PM" data-cn="周六：上午10:00 - 晚上11:00">Saturday: 10:00 AM - 11:00 PM</li>
+                        <li data-en="Sunday: 10:00 AM - 9:00 PM" data-cn="周日：上午10:00 - 晚上9:00">Sunday: 10:00 AM - 9:00 PM</li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3 data-en="Newsletter" data-cn="通讯">Newsletter</h3>
+                    <p data-en="Subscribe to our newsletter for the latest updates and special offers." data-cn="订阅我们的通讯以获取最新更新和特别优惠。">Subscribe to our newsletter for the latest updates and special offers.</p>
+                    <form>
+                        <div class="form-group">
+                            <input type="email" placeholder="Your Email" data-en="Your Email" data-cn="您的邮箱" required>
+                        </div>
+                        <button type="submit" class="btn" data-en="Subscribe" data-cn="订阅">Subscribe</button>
+                    </form>
+                </div>
+            </div>
+            <div class="copyright">
+                <p data-en="&copy; 2023 Earth Feast. All Rights Reserved." data-cn="&copy; 2023 Earth Feast。保留所有权利。">&copy; 2023 Earth Feast. All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+<script src="./main.js"></script>
+</body>
+</html>
+```
